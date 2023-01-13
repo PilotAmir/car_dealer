@@ -1,0 +1,212 @@
+
+/* *****************************************************************
+GENERAL
+***************************************************************** */
+
+html, body, div, span, applet, object, iframe,
+h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+:root{
+    --white:#ffffff;
+    --yel:#c5c544;
+    --vert:#192519;
+    --noir:#000000;
+}
+.container {
+	box-sizing: border-box;
+    max-width: 80%;
+    margin: 0 auto;
+
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
+
+li{
+    list-style-type: none;
+}
+
+.tac{
+    text-align: center;
+}
+
+.icon_main{
+    width:10rem;
+}
+
+.icop:hover{
+    fill: var(--yel);
+}
+
+.photo{
+    background-color: var(--noir);
+    width: 20%;
+    border-radius: 100px;
+}
+
+.photo:hover{
+    background-color: var(--yel);
+}
+
+/* *****************************************************************
+NAV
+***************************************************************** */
+nav{
+    background-color: var(--vert);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+nav ul{
+    margin-top: 3rem;
+    border-top:1px solid var(--white);
+}
+
+nav ul li{
+    font-weight: 700;
+}
+
+nav ul li a{
+    display:block;
+    color:var(--white);
+    font-weight:bold;
+    /* text-decoration: none; */
+    padding:1rem;
+    border-bottom: 1px solid var(--white);
+    transition: all .7s linear;
+}
+
+nav ul li a:hover,
+nav ul li a:focus{
+    transform:scale(1.0);
+    transition: transform 1s,background-color 1s,color 1s;
+    background-color:var(--yel); 
+    color:black;
+}
+
+nav ul li a.active{
+    background-color: #192519;
+}
+
+/* *****************************************************************
+MAIN
+***************************************************************** */
+.banner{
+    position:relative;
+    background-image: url(../img/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-block: 10em;
+    text-align: center;
+    /* filter: brightness(.75); */
+    /* background-color: var(--noir); */
+    
+}
+
+.titre{
+    position:absolute;
+    z-index: 10;
+}
+
+h1{
+    color:var(--white);
+}
+
+.banner p{
+    color:var(--white);
+}
+
+.banner a{
+    position:relative;
+    text-decoration: none;
+    color: var(--noir);
+    background-color: var(--yel);
+    padding:1rem;
+    border-radius: 1.5rem;
+    top:2rem;
+    
+}
+
+.margin_bottom{
+    margin-bottom: 2rem;
+}
+
+main svg {
+    color:black;
+    transition: all .7s linear;
+}
+
+main svg:hover{
+    color:var(--yel);
+    transform:scale(1.1);
+    transition: transform 1s,background-color 1s,color 1s;
+}
+
+
+/* *****************************************************************
+FOOTER
+***************************************************************** */
+.ico{
+    width:2rem;
+    fill: #fff;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-evenly ;
+}
+
+.bg_footer{
+    background-image: url(../img/footer-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color:var(--white);
+}
+
+
+/* *****************************************************************
+VERSION TABLETTE
+***************************************************************** */
+@media screen and(min-width:760px){
+    nav ul {
+        display:flex;
+        justify-content: space-around;
+    }
+
+
+}
+
+
+@media screen and (min-width:1100px){
+
+}
+
+
+
+
+
+
+
+
+
