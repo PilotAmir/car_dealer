@@ -10,7 +10,7 @@ del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
+/* fieldset, form, label, legend, */
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
@@ -29,6 +29,8 @@ time, mark, audio, video {
     --yel:#c5c544;
     --vert:#192519;
     --noir:#000000;
+    --beige:#ebe3db;
+    --red:#950000;
 }
 .container {
 	box-sizing: border-box;
@@ -67,6 +69,10 @@ li{
 .photo:hover{
     background-color: var(--yel);
 }
+
+/* body{
+    background-color: #4c4343;
+} */
 
 /* *****************************************************************
 NAV
@@ -108,16 +114,37 @@ nav ul li a.active{
     background-color: #192519;
 }
 
+.blk{
+    color:var(--noir);
+}
+
+.blk svg {
+    color:black;
+    transition: all .7s linear;
+}
+
+.blk svg:hover{
+    color:var(--yel);
+    transform:scale(1.1);
+    transition: transform 1s,background-color 1s,color 1s;
+}
+
+.blk svg{
+    width:3rem;
+}
+
 /* *****************************************************************
 MAIN
 ***************************************************************** */
 .banner{
     position:relative;
-    background-image: url(../img/banner.png);
+    background-image: url(../img/Audi-black-car-front-view-headlight_3840x2160.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding-block: 10em;
     text-align: center;
+    
+    
     /* filter: brightness(.75); */
     /* background-color: var(--noir); */
     
@@ -186,6 +213,39 @@ FOOTER
 
 
 /* *****************************************************************
+ABOUT
+***************************************************************** */
+.galery{
+    background-color: var(--vert);
+    padding: 3rem 2rem 0 2rem;
+}
+
+.galery figure {
+	margin-bottom: 3rem;
+}
+
+.galery figure:last-of-type {
+	padding-bottom: 2rem;
+}
+
+.galery figcaption {
+	text-align: center;
+}
+
+video {
+	display: block;
+	width: 90%;
+	margin: 5rem auto;
+}
+
+
+
+
+
+
+
+
+/* *****************************************************************
 VERSION TABLETTE
 ***************************************************************** */
 @media screen and(min-width:760px){
@@ -210,3 +270,80 @@ VERSION TABLETTE
 
 
 
+/* input[type="text"] {
+	width: 50%;
+	margin: 3rem auto 0 auto;
+	border: none;
+	background-color: #4c4343;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.6rem;
+	letter-spacing: .3rem;
+	padding: 1rem 3rem;
+} */
+
+
+
+/* *****************************************************************
+PAGE NOS VOITURES
+***************************************************************** */
+.filter{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.filter button{
+    /* display: block; */
+    border: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: .3rem;
+    background-color:var(--beige) ;
+    padding: 1rem 2rem;
+    margin: 2rem 1rem;
+    cursor:pointer;
+    transition: all .7s;
+}
+
+.filter button:hover{
+    color:var(--white);
+    background-color: var(--yel);
+}
+
+.choice{
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap:wrap;
+    background-color:var(--vert) ;
+    padding-top: 4rem;
+}
+
+.bane{
+    position:relative;
+    background-image: url(../img/brand-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-block: 10em;
+    /* text-align: center; */
+    color:var(--white);
+}
+
+
+
+
+/* *****************************************************************
+INSCRIPTION
+***************************************************************** */
+
+
+/* *****************************************************************
+DASHBOARD
+***************************************************************** */
+.dashboardbane{
+    background-image: url(../img/1013266.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-block: 10rem;
+    color:var(--white);
+}

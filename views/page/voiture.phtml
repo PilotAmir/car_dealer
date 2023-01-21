@@ -1,0 +1,45 @@
+<form action="" method="post" enctype="multipart/form-data">
+<fieldset>
+    <legend>
+
+    </legend>
+    <div>
+        <label for="voiture_brand">Voiture brand</label>
+        <input type="text" name="voiture_brand" id="voiture_brand">
+    </div>
+    <div>
+        <label for="voiture_model">Voiture model</label>
+        <input type="text" name="voiture_model" id="voiture_model">
+    </div>
+    <div>
+        <label for="voiture_color">Voiture color</label>
+        <input type="text" name="voiture_color" id="voiture_color">
+    </div>
+    <div>
+        <label for="voiture_price">Voiture price</label>
+        <input type="text" name="voiture_price" id="voiture_price">
+    </div>
+    <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
+        <div >
+          <input type="file" name="img" class="form-control">
+        </div>
+    
+    <button type="submit">Envoyer</button>
+
+</fieldset>
+
+</form>
+<div>
+    <h2>Liste des voitures</h2>
+
+    <?php if (isset($liste_voiture)) : ?>
+            
+                <?php foreach ($liste_voiture as $key => $values) : ?>
+                    <h2><?=$values["voiture_price"]?></h2>
+                  <img src="<?=$values["images_voitures"]?>">
+                <?php endforeach ?>
+            </table>
+
+        <?php endif ?>
+        
+</div>

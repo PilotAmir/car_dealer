@@ -11,23 +11,24 @@ class router
         });
         if(isset($_GET['goto'])){
             switch ($_GET['goto']){
-                // case 'user':
-                //     $user = new \controllers\users;
-                // case 'reservation':
-                //     $user = new \controllers\reservation;
-                //     break;
-                // case 'auth':
-                //     $user = new \controllers\Auth;
-                //     break;
-                // case 'admin':
-                //     $user = new \controllers\admin;
-                //     break;
-                // case 'plats':
-                //     $user = new \controllers\plats;
-                //     break;
-                // case 'menu' :
-                //     $user = new \controllers\menu;
-                //     break;    
+                case 'acceuil':
+                    $user = new \controllers\acceuil;
+                    break;
+                case 'reservation':
+                    $user = new \controllers\reservation;
+                    break;
+                case 'connexion':
+                    $user = new \controllers\authentification;
+                    break;
+                case 'inscription':
+                    $user = new \controllers\inscription;
+                    break;
+                case 'voiture' :
+                    $user = new \controllers\voiture;
+                    break;    
+                case 'admin' :
+                    $user = new \controllers\admin;
+                    break;    
             }
 
         }else{

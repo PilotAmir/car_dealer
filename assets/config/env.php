@@ -2,4 +2,4 @@
 $_ENV['userbd'] = 'root';
 $_ENV['host'] = 'localhost';
 $_ENV['bdd'] = 'car_dealer';
-$ENV['password'] = '';
+$_ENV['password'] = '';

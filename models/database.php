@@ -1,6 +1,6 @@
 <?php
 namespace models;
-include_once 'asset/config/env.php';
+include_once 'assets/config/env.php';
 abstract class database
 {
     /****
@@ -13,6 +13,7 @@ abstract class database
             $bdd = new \PDO("mysql:host=" . $_ENV['host'] . ";dbname=" . $_ENV['bdd'], $_ENV['userbd'], $_ENV['password']);
             $bdd->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             return $bdd;
+            echo 'connexion reussi';
         } catch (\PDOException $e) {
             return " Une erreur est retrouvée : " . $e->getMessage();
         }
@@ -29,6 +30,7 @@ abstract class database
             $bdd = $this->ConnectDB();
             $requette = $bdd->prepare($request);
             $requette->execute($data);
+           
         } catch (\PDOException $e) {
             return " Une erreur est retrouvée : " . $e->getMessage();
         }

@@ -2,19 +2,27 @@
 namespace controllers;
 class acceuil
 {
-    private $acceuil;
+    
     function __construct()
     {
         if(isset($_GET['target'])){
             $target=$_GET['target'];
             $this->$target(); 
         }else{
-            $this->home();
+            $this->acceuil();
         }
     
     }
-    public function home()
+
+    public function acceuil()
     {
-        $template='views/acceuil.phtml';
+        $template = 'views/page/acceuil.phtml';
+        include_once 'views/main.phtml';
+    }
+
+    public function about()
+    {
+        $template = 'views/page/about.phtml';
+        include_once 'views/main.phtml';
     }
 }
