@@ -5,12 +5,12 @@ class admin
 {
     private $model;
     private $NavModel;
-    use \controllers\utils;
+    // use \controllers\utils;
     public function __construct()
    {
-    $_SESSION['links']=$this->GetLinks();
-    $this->Navmodel=New \models\nav_links();
-
+    // $_SESSION['links']=$this->GetLinks();
+    // $this->Navmodel=New \models\nav_links();
+    $this->model= new \models\reservation();
     if(isset($_GET['target'])){
         $target=$_GET['target'];
         $this->$target();
@@ -46,7 +46,20 @@ class admin
     }
 
     $template = 'views/page/adddashlink.phtml';
-    include_once 'views/main.phtml';
+    include_once 'views/mainadmin.phtml';
+   }
+
+   public function consulter()
+   {
+    $liste_reservation=$this->model->GetReservation();
+    $template = 'views/page/consulter.phtml';
+    include_once 'views/mainadmin.phtml';
+   }
+
+   public function inscription()
+   {
+    $template = 'views/page/inscription.phtml';
+    include_once 'views/mainadmin.phtml';
    }
 
 }

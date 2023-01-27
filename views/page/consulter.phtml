@@ -1,0 +1,41 @@
+<h3 class = 'tac' >Voici la liste des clients qui ont reserver</h3>
+<div>
+        <?php if (isset($liste_reservation)) : ?>
+            <?php echo 'ho' ?>
+            <table>
+                <tr>
+                    <th>N°</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Id-Reservation</th>
+                    <th>ID_voiture_reserver</th>
+                    <th>Date-Reservation</th>
+                    <th>Pack-Reserver</th>
+                    <th>Marque-Reserver</th>
+                    <th>Model-Voiture</th>
+                    <th>Couleur-voiture</th>
+                    <th>Prix TTC</th>
+                    <th colspan="2"></th>
+                </tr>
+                <?php foreach ($liste_reservation as $key => $values) : ?>
+                    <tr>
+                        <td><?= $num++ ?></td>
+                        <td><?= $values['nom'] ?></td>
+                        <td><?= $values['prenom'] ?></td>
+                        <td><?= $values['reservation_id'] ?></td>
+                        <td><?= $values['voiture_reserv'] ?></td>
+                        <td><?= $values['date_de_reservation'] ?></td>
+                        <td><?= $values['pack_reserver'] ?></td>
+                        <td><?= $values['voiture_brand'] ?></td>
+                        <td><?= $values['voiture_model'] ?></td>
+                        <td><?= $values['voiture_color'] ?></td>
+                        <td><?= $values['voiture_price'] ?></td>
+                        <td><button style="background-color:gray; color:white;"><a href="index.php?page=update&id=<?= $values['Id'] ?>">Edit</a></button></td>
+                        <td><button style="background-color:brown; color:white;"><a href="index.php?page=delete&id=<?= $values['Id'] ?>">Delete</a></button></td>
+                    </tr>
+                <?php endforeach ?>
+            </table>
+
+        <?php endif ?>
+        
+    </div>

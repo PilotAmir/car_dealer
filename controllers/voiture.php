@@ -18,7 +18,8 @@ class voiture implements base
 
     public function index()
     {
-
+      // $template = "views/page/voiture.phtml";
+      // include_once 'views/mainadmin.phtml';
     }
 
     public function store()
@@ -62,7 +63,7 @@ class voiture implements base
             // echo "<pre>";
             // var_dump($liste_voiture); 
         $template ='views/page/voiture.phtml';
-        include_once 'views/main.phtml';
+        include_once 'views/mainadmin.phtml';
     }
 
     public function update()

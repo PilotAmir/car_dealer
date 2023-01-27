@@ -1,17 +1,23 @@
-<form action="" method="post" class="connect">
+
+<div class="main-form">
+    <form action="" method="post" class="connect">
         <fieldset>
             <legend>Connecte toi et réserve en 3 click!!</legend>
             <div>
-            <label for="id_user">Identifiant :</label>
-            <input type="text" name="id_user" id="id_user"><br><br>
+                <input type="text" name="id_user" id="id_user">
+                <i class="fa-sharp fa-solid fa-user"></i>
+                <label for="id_user">Identifiant </label>
             </div>
 
             <div>
-            <label for="mdp">Mot de passe :</label>
-            <input type="text" name="mdp" id="mdp"><br><br>
+                <input type="text" name="mdp" id="mdp">
+                <i class="fa-solid fa-house-lock"></i>
+                <label for="mdp">Mot de passe </label>
             </div>
-            <a href="index.php?goto=inscription">Vous n'avez pas encore de compte? Inscrivez-vous!</a>
+
+          <p> Vous n'avez pas encore de compte?  <a href="index.php?goto=inscription">Inscrivez-vous!</a></p>
 
             <button type="submit">Connexion</button>
         </fieldset>
     </form>
+</div>

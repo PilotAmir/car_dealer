@@ -1,0 +1,45 @@
+
+    <div class="bane">
+        <h2 class="tac">LE MONDE AUTREMENT</h2>
+    </div>
+    <h2 class="tac">NOS VOITURES DE LUXES</h2>
+    <p class="tac">CHOISIS PARMIS LES 4 MARQUES LES PLUS LUXUEUSES DU MONDE</p>
+    <div class="filter">
+    <button><a href="index.php?goto=catalogue&target=index">ALL</a></button>
+    <button><a href="index.php?goto=catalogue&target=bmw">BMW</a></button>
+    <button><a href="index.php?goto=catalogue&target=audi">AUDI</a></button>
+    <button><a href="index.php?goto=catalogue&target=mercedes">MERCEDES</a></button>
+    <button><a href="index.php?goto=catalogue&target=lamborghini">LAMBORGHINI</a></button>
+    
+    </div>
+
+
+    <div class="choice">
+            
+            <?php if (isset($liste_voiture)) : ?>
+                
+                <?php foreach ($liste_voiture as $key => $values) : ?>
+                    <div>
+                        <img src="<?=$values["images_voitures"]?>" alt ="voiture_de_luxe">
+                    </div>
+                   
+                <?php endforeach ?> 
+            <?php endif ?>   
+    </div>
+
+        <h2 class="tac">Découvrez Nos Offres exceptionnel</h2>
+
+        <div class="daily" >
+            <h3 class="tac" >NOS OFFRES LOCATION DAILY</h3>
+        </div> 
+
+        <div class="gold">
+            <h3 class="tac">NOS OFFRES LOCATION GOLD</h3>
+        </div>   
+
+        <div class="diamond">
+            <h3 class="tac" >NOS OFFRES LOCATION DIAMOND</h3>
+        </div>
+
+    <button> Si tu souhaites réserver, crée ton compte et profite de nos offre exceptionnel en <a href="index.php?goto=inscription">cliquant ici</a> </button>
+    

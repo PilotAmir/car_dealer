@@ -1,45 +1,44 @@
-<form action="" method="post" enctype="multipart/form-data">
-<fieldset>
-    <legend>
+<div class="main-form"> 
+  <form action="" method="post" enctype="multipart/form-data">
 
-    </legend>
-    <div>
-        <label for="voiture_brand">Voiture brand</label>
-        <input type="text" name="voiture_brand" id="voiture_brand">
-    </div>
-    <div>
-        <label for="voiture_model">Voiture model</label>
-        <input type="text" name="voiture_model" id="voiture_model">
-    </div>
-    <div>
-        <label for="voiture_color">Voiture color</label>
-        <input type="text" name="voiture_color" id="voiture_color">
-    </div>
-    <div>
-        <label for="voiture_price">Voiture price</label>
-        <input type="text" name="voiture_price" id="voiture_price">
-    </div>
-    <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
-        <div >
-          <input type="file" name="img" class="form-control">
-        </div>
-    
-    <button type="submit">Envoyer</button>
-
-</fieldset>
-
-</form>
-<div>
-    <h2>Liste des voitures</h2>
-
-    <?php if (isset($liste_voiture)) : ?>
+        <div>
             
-                <?php foreach ($liste_voiture as $key => $values) : ?>
-                    <h2><?=$values["voiture_price"]?></h2>
-                  <img src="<?=$values["images_voitures"]?>">
-                <?php endforeach ?>
-            </table>
+            <input type="radio" name="voiture_brand" id="voiture_brand" value="bmw">
 
-        <?php endif ?>
+            <label for="voiture_brand">BMW</label><br>
+
+            <input type="radio" name="voiture_brand" id="voiture_brand" value="audi">
+
+            <label for="voiture_brand">AUDI</label><br>
+
+            <input type="radio" name="voiture_brand" id="voiture_brand" value="mercedes">
+
+            <label for="voiture_brand">MERCEDES</label><br>
+
+            <input type="radio" name="voiture_brand" id="voiture_brand" value="lamborghini">
+
+            <label for="voiture_brand">LAMBORGHINI</label><br>
+
+        </div>
+
+        <div>
+            <label for="voiture_model">Voiture model</label>
+            <input type="text" name="voiture_model" id="voiture_model" placeholder = "voituremodel">
+        </div>
+        <div>
+            <label for="voiture_color">Voiture color</label>
+            <input type="text" name="voiture_color" id="voiture_color">
+        </div>
+        <div>
+            <label for="voiture_price">Voiture price</label>
+            <input type="text" name="voiture_price" id="voiture_price">
+        </div>
+        <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
+            <div >
+            <input type="file" name="img" class="form-control">
+            </div>
         
-</div>
+        <button type="submit">Envoyer</button>
+
+    </form>
+</div> 

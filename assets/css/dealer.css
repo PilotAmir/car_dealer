@@ -3,15 +3,15 @@
 GENERAL
 ***************************************************************** */
 
-html, body, div, span, applet, object, iframe,
+/* html, body, div, span, applet, object, iframe,
 h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
-dl, dt, dd, ol, ul, li,
-/* fieldset, form, label, legend, */
-table, caption, tbody, tfoot, thead, tr, th, td,
+dl, dt, dd, ol, ul, li, 
+ fieldset, form, label, legend, 
+ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
@@ -22,7 +22,19 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+} */
+
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
 }
+
+
+
 
 :root{
     --white:#ffffff;
@@ -34,14 +46,14 @@ time, mark, audio, video {
 }
 .container {
 	box-sizing: border-box;
-    max-width: 80%;
+    
     margin: 0 auto;
 
 }
 
 a{
     text-decoration: none;
-    color:white;
+    color:var(--noir);
 }
 
 li{
@@ -80,7 +92,7 @@ NAV
 nav{
     background-color: var(--vert);
     text-align: center;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 }
 
 nav ul{
@@ -141,26 +153,44 @@ MAIN
     background-image: url(../img/Audi-black-car-front-view-headlight_3840x2160.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    padding-block: 10em;
+    padding-block: 25rem;
     text-align: center;
-    
-    
+    /* background: linear-gradient(
+        rgba(0, 0, 0, 0.45), 
+        rgba(0, 0, 0, 0.45)
+        ); */
     /* filter: brightness(.75); */
     /* background-color: var(--noir); */
-    
+    margin: 1rem 0;
+
+}
+
+.banner::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: var(--noir);
+    opacity: .5;
 }
 
 .titre{
     position:absolute;
     z-index: 10;
+    top: 50%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
 }
 
-h1{
+h1{      
     color:var(--white);
+   
 }
 
 .banner p{
-    color:var(--white);
+    color:var(--white);    
 }
 
 .banner a{
@@ -190,6 +220,7 @@ main svg:hover{
 }
 
 
+
 /* *****************************************************************
 FOOTER
 ***************************************************************** */
@@ -209,8 +240,16 @@ FOOTER
     background-size: cover;
     text-align: center;
     color:var(--white);
+    
 }
 
+
+
+
+
+.bg_footer a{
+    color: var(--white);
+}
 
 /* *****************************************************************
 ABOUT
@@ -251,7 +290,7 @@ VERSION TABLETTE
 @media screen and(min-width:760px){
     nav ul {
         display:flex;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
 
@@ -314,9 +353,30 @@ PAGE NOS VOITURES
 .choice{
     display:flex;
     justify-content: space-evenly;
+    align-items: center;
     flex-wrap:wrap;
-    background-color:var(--vert) ;
-    padding-top: 4rem;
+    background-color:var(--beige);
+    margin: 2rem;
+    padding: 1rem;
+}
+
+.choice div {
+    width: 30rem;
+    height: 20rem;
+    transition: all .1s linear;
+}
+
+.choice div:hover{
+    transform:scale(1.1);
+    transition: transform 1s,background-color 1s,color 1s;
+    cursor: pointer;
+}
+
+.choice div img{
+    /* flex-basis: 10%; */
+    width: 30rem;
+    margin: .2rem;
+    height: 90%;
 }
 
 .bane{
@@ -329,12 +389,94 @@ PAGE NOS VOITURES
     color:var(--white);
 }
 
+.daily{
+    background-image: url('../img/photo-audi-1644424074.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-block: 10rem;
+    margin:2rem;
+    width: 1200px;
+    /* height: 80%; */
+    padding:30%;
+}
+
+.daily h3{
+    color:var(--white);
+}
+
+.gold{
+    background-image: url('../img/S0-lamborghini-va-continuer-a-proposer-des-v12-733975.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-block: 10rem;
+    margin:2rem;
+    width:1200px;
+    /* height: 80%; */
+    padding: 20%;
+}
+
+.gold h3{
+    color:var(--white);
+}
+
+.diamond{
+    background-image: url('../img/vue-3-4-arriere-BMW-M4-Concept-Iconic-Lights.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-block: 10rem;
+    margin:2rem;
+    width:1200px;
+    /* height: 80%; */
+    padding:30%;
+}
+
+.diamond h3{
+    color:var(--white);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 /* *****************************************************************
 INSCRIPTION
 ***************************************************************** */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* *****************************************************************
@@ -346,4 +488,39 @@ DASHBOARD
     background-size: cover;
     padding-block: 10rem;
     color:var(--white);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *****************************************************************
+FORMULAIRE
+***************************************************************** */
+
+.main-form{
+
+    padding: 2rem;
+    margin:1rem;
+}
+
+.main-form div{
+    margin:1rem;
+}
+
+.main-form input{
+    width: 15%;
 }

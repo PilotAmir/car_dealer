@@ -11,17 +11,17 @@ class router
         });
         if(isset($_GET['goto'])){
             switch ($_GET['goto']){
-                case 'acceuil':
-                    $user = new \controllers\acceuil;
+                case 'menu':
+                    $user = new \controllers\menu;
                     break;
-                case 'reservation':
-                    $user = new \controllers\reservation;
-                    break;
-                case 'connexion':
-                    $user = new \controllers\authentification;
+                case 'catalogue':
+                    $user = new \controllers\catalogue;
                     break;
                 case 'inscription':
                     $user = new \controllers\inscription;
+                        break;
+                case 'connexion':
+                    $user = new \controllers\authentification;
                     break;
                 case 'voiture' :
                     $user = new \controllers\voiture;
@@ -29,10 +29,13 @@ class router
                 case 'admin' :
                     $user = new \controllers\admin;
                     break;    
+                case 'reservation' :
+                    $user = new \controllers\reservation;
+                    break;
             }
 
         }else{
-            $user = new \controllers\acceuil;
+            $user = new \controllers\menu;
         }
 
     }

@@ -34,7 +34,11 @@ class authentification
                 
                     if (password_verify($_POST["mdp"], $user["mdp"])){
                         // echo'rentrer';
-                        // $_SESSION['authentification']=json_encode(['user'=>$user['Identifiant'],'id'=>$user['Id']]);
+                        $_SESSION['authentification']=json_encode(['user'=>$user['Identifiant'],'id'=>$user['Id']]);
+                        $_SESSION['user_lastname']= $user["nom"];
+                        $_SESSION['user_firstname']= $user["prenom"];
+                        $_SESSION['user_id']= $user["client_id"];
+                        $_SESSION['user_email']= $user["email"];
                         header("location: index.php?goto=reservation");
                         exit();
                     }

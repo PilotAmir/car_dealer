@@ -1,0 +1,42 @@
+
+<div class="esp_ab">
+    <div>
+        
+        <h2 class="tac" >BIENVENUE SUR TON ESPACE PERSONNELLE</h2>
+        <h2 class="tac" ><?php echo $_SESSION['user_lastname'] ." ". $_SESSION['user_firstname'] ?></h2>
+        <p>Ta voiture n'attend que toi. Démarre ton aventure avec car Luxury Car Dealer aujourdh'ui</p>
+    </div>
+</div>
+
+<h2 class="tac">Réserver n'a jamais été aussi facile</h2>
+<p>procède à la réservation de ta voiture en remplissant le formulaire ci dessous</p>
+
+
+<div class="choice">
+            
+            <?php if (isset($liste_voiture)) : ?>
+                
+                <?php foreach ($liste_voiture as $key => $values) : ?>
+                    <div><img src="<?=$values["images_voitures"]?>" alt ="voiture_de_luxe">
+                    </div>
+
+                    <form action="" method='post'>
+                        <!-- <input type="hidden" name="id_de_client" value="<?=[$_SESSION['user_id']]?>" > -->
+
+                        <input type="hidden" name="id_de_voiture" value="<?=$values["voiture_id"]?>">
+
+                        <input type="radio" name="pack_reserver" id="pack_reserver" value="daily">
+                        <label for="pack_reserver">daily</label>
+
+                        <input type="radio" name="pack_reserver" id="pack_reserver" value="diamond">
+                        <label for="pack_reserver">diamond</label>
+
+                    <button type='text' name= "ss">Je reserve</button>
+                    </form>
+
+                <?php endforeach ?> 
+
+            <?php endif ?>   
+    </div>
+
+
