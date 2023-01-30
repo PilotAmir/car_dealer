@@ -23,22 +23,48 @@
 
         <div>
             <label for="voiture_model">Voiture model</label>
-            <input type="text" name="voiture_model" id="voiture_model" placeholder = "voituremodel">
+            <input type="text" name="voiture_model" id="voiture_model" placeholder = "voituremodel" value='<?=(isset($b)) ? $b['voiture_model'] : '' ?>' >
         </div>
         <div>
             <label for="voiture_color">Voiture color</label>
-            <input type="text" name="voiture_color" id="voiture_color">
+            <input type="text" name="voiture_color" id="voiture_color" value='<?=(isset($b)) ? $b['voiture_color'] : '' ?>' >
         </div>
         <div>
             <label for="voiture_price">Voiture price</label>
-            <input type="text" name="voiture_price" id="voiture_price">
+            <input type="text" name="voiture_price" id="voiture_price" value='<?=(isset($b)) ? $b['voiture_price'] : '' ?>' >
         </div>
         <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
             <div >
             <input type="file" name="img" class="form-control">
             </div>
         
-        <button type="submit">Envoyer</button>
+        <button type="text" name="send" >Envoyer</button>
 
     </form>
 </div> 
+<div>
+<?php if(isset($liste_voiture)):?>
+    <table>
+        <tr>
+            <th>N°</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Couleur</th>
+            <th>Prix</th>
+            <th>Image</th>
+        </tr>
+    <?php foreach($liste_voiture as $key=>$values): ?>
+        <tr>
+            <td><?=$num++?></td>
+            <td><?=$values['voiture_brand']?></td>
+            <td><?=$values['voiture_model']?></td>
+            <td><?=$values['voiture_color']?></td>
+            <td><?=$values['voiture_price']?></td>
+            <td><?=$values['images_voitures']?></td>
+            <td><button style="background-color:gray; color:white;"><a href="index.php?goto=voiture&target=updateVoit&id=<?= $values['voiture_id'] ?>">Edit</a></button></td>
+                        <td><button style="background-color:brown; color:white;"><a href="index.php?goto=voiture&target=destroy&id=<?= $values['voiture_id'] ?>">Delete</a></button></td>
+        </tr>
+        <?php endforeach ?>
+    </table>
+    <?php endif ?>
+    </div>

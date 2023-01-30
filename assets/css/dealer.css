@@ -81,7 +81,14 @@ li{
 .photo:hover{
     background-color: var(--yel);
 }
-
+table{
+    margin: 10px auto;
+}
+td,th{
+    border: 1px solid black;
+    text-align: left;
+    padding: 14px;
+}
 /* body{
     background-color: #4c4343;
 } */

@@ -1,0 +1,32 @@
+<div>
+        <?php if (isset($liste_client)) : ?>
+            <table>
+                <tr>
+                    <th>N°</th>
+                    <th>Id_du_client</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Email</th>
+                    <th>Tel</th>
+                    <th>Login</th>
+                    <th colspan="2"></th>
+
+                </tr>
+                <?php foreach ($liste_client as $key => $values) : ?>
+                    <tr>
+                        <td><?= $num++ ?></td>
+                        <td><?= $values['client_id'] ?></td>
+                        <td><?= $values['nom'] ?></td>
+                        <td><?= $values['prenom'] ?></td>
+                        <td><?= $values['email'] ?></td>
+                        <td><?= $values['tel'] ?></td>
+                        <td><?= $values['identifiant'] ?></td>
+                        <td><button style="background-color:gray; color:white;"><a href="index.php?page=update&id=<?= $values['Id'] ?>">Edit</a></button></td>
+                        <td><button style="background-color:brown; color:white;"><a href="index.php?goto=inscription&target=destroy&id=<?= $values['client_id'] ?>">Delete</a></button></td>
+                    </tr>
+                <?php endforeach ?>
+            </table>
+
+        <?php endif ?>
+        
+    </div>

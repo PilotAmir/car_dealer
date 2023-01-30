@@ -24,7 +24,7 @@ class reservation
 
         if (isset($_POST["ss"])){
             var_dump($_POST);
-            echo"voila la session   ";
+            echo"voila la session";
             var_dump($_SESSION['user_id']);
             $this->reserve->Insert([$_SESSION['user_id'], $_POST['id_de_voiture'], $_POST['pack_reserver']]);
         }else{

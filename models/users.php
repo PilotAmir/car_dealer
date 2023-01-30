@@ -10,7 +10,7 @@ class users extends database implements base
         $this->SendData("UPDATE client SET nom=?,prenom=?,email=?,tel=?,identifiant=?,mdp=? WHERE Id=?",$data);
     }
     public function Delete(int $id){
-        $this->SendData("DELETE FROM client WHERE Id=?",[$id]);
+        $this->SendData("DELETE FROM client WHERE client_id=?",[$id]);
     }
     public function GetAll(): array{
         return $this->GetManyData("SELECT client_id, nom, prenom, email, tel,identifiant FROM client",NULL);

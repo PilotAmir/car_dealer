@@ -1,0 +1,78 @@
+<div>
+
+<form action="" method='post' enctype="multipart/form-data">
+
+
+        <div>
+            <label for="titre">Titre de l'article</label>
+            <input type="text" name="titre" id="titre" placeholder = "Titre" value='<?=(isset($a)) ? $a['titre'] : '' ?>'>
+        </div>
+
+        <div>
+          <textarea name="commentaire" id="commentaire" cols="50" rows="20">
+          <?=(isset($a)) ? $a['commentaire'] : '' ?>
+          </textarea>
+        </div>
+
+        <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
+
+        <div >
+            <input type="file" name="img" class="form-control">
+        </div>
+        
+        <button type="submit">Envoyer</button>
+
+
+
+
+</form>
+
+</div>
+
+<div >
+            
+            <?php if (isset($image_article)) : ?>
+                <!-- <?php echo'cool';?> -->
+                
+                <?php foreach ($image_article as $key => $values) : ?>
+                    <?php echo'cool';?>
+                    <div>
+                        <h2> <?=$values["titre"]?></h2>
+                        <p> <?=$values["commentaire"]?> </p>
+                    </div>
+
+                    <div>
+                        <img src="<?=$values["image_article"]?>" alt ="image_article">
+                    </div>
+                   
+                <?php endforeach ?> 
+            <?php endif ?>
+
+    </div>
+
+    <div>
+        <?php if (isset($article)) : ?>
+            <table>
+                <tr>
+                    <th>N°</th>
+                    <th>Titre</th>
+                    <th>Commentaire</th>
+                    <th>Image</th>
+                    <th colspan="2">Action</th>
+
+                </tr>
+                <?php foreach ($article as $key => $values) : ?>
+                    <tr>
+                        <td><?= $num++ ?></td>
+                        <td><?= $values['titre'] ?></td>
+                        <td><?= $values['commentaire'] ?></td>
+                        <td><?= $values['image_article'] ?></td>
+                        <td><button style="background-color:gray; color:white;"><a href="index.php?goto=admin&target=updateArt&id=<?= $values['article_id'] ?>">Edit</a></button></td>
+                        <td><button style="background-color:brown; color:white;"><a href="index.php?goto=admin&target=destroy&id=<?= $values['article_id'] ?>">Delete</a></button></td>
+                    </tr>
+                <?php endforeach ?>
+            </table>
+
+        <?php endif ?>
+        
+    </div>

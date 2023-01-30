@@ -57,19 +57,21 @@ class inscription implements base
 
     public function update()
     {
-        $this->model->GetById(intval($_GET['id']));
+        $this->model->GetById(intval($_GET['client_id']));
     }
 
     public function destroy()
     {
         if (isset($_GET['id'])) {
-            // J'appelle DeleteUser() depuis le model, qui me permet de supprimer un utilisateur en fonction de son id 
+            // J'appelle DeleteUser() depuis le model, qui me permet de supprimer un utilisateur en fonction de son client_id 
             $this->model->Delete(intval($_GET['id']));
-            header("location: index.php");
-            exit();
+            echo'supp';
+            // header("location: index.php");
+            // exit();
         } else {
-            header("location: index.php");
-            exit();
+            // header("location: index.php");
+            // exit();
+            echo'impossible';
         }
     }
 
@@ -88,8 +90,12 @@ class inscription implements base
 
     public function listeClient()
     {
-        return $this->GetManyData("SELECT client_id, nom, prenom, email, tel,identifiant FROM client",NULL);
+        $liste_client=$this->model->GetAll();
+        $num=1;
+        $template = 'views/page/liste_client.phtml';
+        include_once 'views/mainadmin.phtml';
     }
-
+    
+    
 
 }

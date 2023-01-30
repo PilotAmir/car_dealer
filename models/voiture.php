@@ -8,14 +8,8 @@ class voiture extends database
         $this->SendData("INSERT INTO voiture(voiture_brand,voiture_model,voiture_color,voiture_price,images_voitures) VALUES(?,?,?,?,?)", $data);
     }
 
-    public function Update(array $data)
-    {
-        $this->SendData("UPDATE plats SET nom_plat=?,prix_du_plat=?, WHERE Id=?",$data);
-    }
-
-    public function Delete(int $id)
-    {
-        $this->SendData("DELETE FROM plats WHERE Id=?",[$id]);
+    public function Update(array $data){
+        $this->SendData("UPDATE voiture SET voiture_brand=?,voiture_model=?,voiture_color=?,voiture_price=?,images_voitures=? WHERE voiture_id=?",$data);
     }
 
     public function GetAll(): array
@@ -28,5 +22,12 @@ class voiture extends database
         return $this->GetManyData("SELECT voiture_brand,voiture_model,voiture_color,voiture_price,images_voitures FROM voiture WHERE voiture_brand=?",[$brand]);
     }
 
+    public function Delete(int $id){
+        $this->SendData("DELETE FROM voiture WHERE voiture_id=?",[$id]);
+    }
+
+    public function GetById(int $id){
+        return $this->GetOneData("SELECT voiture_id, voiture_brand, voiture_model, voiture_color, voiture_price, images_voitures FROM voiture WHERE voiture_id=?",[$id]);
+    }
 
 }
