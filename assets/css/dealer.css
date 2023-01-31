@@ -51,6 +51,24 @@ time, mark, audio, video {
 
 }
 
+header{
+    margin-bottom: 1rem;
+}
+
+.up{
+    display:flex;
+    justify-content: space-between;
+    background-color: var(--white);
+}
+
+.up h1{
+    color:var(--noir);
+}
+
+.up h1 span{
+    color:#c5c544;
+}
+
 a{
     text-decoration: none;
     color:var(--noir);
@@ -133,23 +151,24 @@ nav ul li a.active{
     background-color: #192519;
 }
 
-.blk{
-    color:var(--noir);
+.sign_in{
+    color:var(--beige);
+
 }
 
-.blk svg {
+.sign_in svg {
     color:black;
     transition: all .7s linear;
 }
 
-.blk svg:hover{
+.sign_in svg:hover{
     color:var(--yel);
     transform:scale(1.1);
     transition: transform 1s,background-color 1s,color 1s;
 }
 
-.blk svg{
-    width:3rem;
+.sign_in svg{
+    width:2rem;
 }
 
 /* *****************************************************************
@@ -261,33 +280,32 @@ FOOTER
 /* *****************************************************************
 ABOUT
 ***************************************************************** */
-.galery{
-    background-color: var(--vert);
-    padding: 3rem 2rem 0 2rem;
+.about{
+    width: 90%;
+    margin:0 auto;
+    padding: 1rem;
 }
 
-.galery figure {
-	margin-bottom: 3rem;
+.about_up{
+    margin:1rem;
+    padding:1rem; 
 }
 
-.galery figure:last-of-type {
-	padding-bottom: 2rem;
+.about_up h2{
+    margin:1rem;
 }
 
-.galery figcaption {
-	text-align: center;
+.about_up img{
+    width: 80%;
+    margin:0 auto;
+    width: 50rem;
+    
 }
 
-video {
-	display: block;
-	width: 90%;
-	margin: 5rem auto;
+.commentaire{
+    line-height: 1.4;
+    text-align: justify;
 }
-
-
-
-
-
 
 
 
@@ -468,7 +486,10 @@ INSCRIPTION
 ***************************************************************** */
 
 
-
+.main-form{
+    margin: 0 auto;
+    max-width: 80%;
+}
 
 
 
