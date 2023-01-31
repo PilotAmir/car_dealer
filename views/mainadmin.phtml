@@ -7,20 +7,28 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/dealer.css" />
 </head>
-<body>
+<body class="ea">
     <div class="container">
         <header>
     <nav>
+
+    <!-- <ul>
+            <?php if(isset($_SESSION['links'])): ?>
+                    <?php foreach($_SESSION['links'] as $link): ?>
+                    <li><a href="index.php?goto=<?=$link['nav_goto']?>&target=<?=$link['nav_target']?>"><?=$link['links_name']?></a></li>
+                    <?php endforeach ?>
+            <?php endif ?>   
+            </ul> -->
+
         <ul>
             <li><a href="index.php?goto=voiture">Ajouter Voiture</a></li>
             <li><a href="index.php?goto=admin&target=consulter">Gestion des utilisateurs</a></li>
-            <li><a href="index.php?goto=admin&target=store">Ajout de lien</a></li>
-            <li><a href="index.php?goto=admin&target=consulter">Consulter les clients ayant réservé</a></li>
+            
+            <li><a href="index.php?goto=reservation&target=liste_reservation">Consulter les clients ayant réservé</a></li>
             <li><a href="index.php?goto=admin&target=article">Publier un nouvel article</a></li>
-            <!-- <li><a href="index.php?goto=inscription&target=listeClient">Liste des utilisateurs</a></li> -->
+            <li><a href="index.php?goto=connexion&target=Destroy_session">Déconnexion</a></li>
         </ul>
     </nav>
-    <button><a href="index.php?goto=connexion&target=Destroy_session">Déconnexion</a></button>
         </header>
         
         <main>

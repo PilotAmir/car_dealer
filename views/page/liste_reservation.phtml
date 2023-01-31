@@ -17,7 +17,7 @@
                     <th>Model</th>
                     <th>Couleur</th>
                     <th>Prix TTC</th>
-                    <th colspan="2"></th>
+                    
                 </tr>
                 <?php foreach ($liste_reservation as $key => $values) : ?>
                     <tr>
@@ -32,8 +32,7 @@
                         <td><?= $values['voiture_model'] ?></td>
                         <td><?= $values['voiture_color'] ?></td>
                         <td><?= $values['voiture_price'] ?></td>
-                        <td><button style="background-color:gray; color:white;"><a href="index.php?page=update&id=<?= $values['Id'] ?>">Edit</a></button></td>
-                        <td><button style="background-color:brown; color:white;"><a href="index.php?page=delete&id=<?= $values['Id'] ?>">Delete</a></button></td>
+                        
                     </tr>
                 <?php endforeach ?>
             </table>

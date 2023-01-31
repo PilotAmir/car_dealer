@@ -20,11 +20,7 @@ class catalogue
     public function index()
     {
         $liste_voiture = $this->model->GetAll();
-        if (isset($_POST)) {
-            var_dump($_POST);
-            
-            
-        }
+       
         $template = 'views/page/catalogue.phtml';
         include_once 'views/main.phtml';
     }
@@ -43,6 +39,7 @@ class catalogue
         include_once 'views/main.phtml';
     }
 
+    
     public function mercedes()
     {
         $liste_voiture = $this->model->GetVoiture("mercedes");
@@ -50,10 +47,14 @@ class catalogue
         include_once 'views/main.phtml';
     }
 
+
+
     public function lamborghini()
     {
         $liste_voiture = $this->model->GetVoiture("lamborghini");
         $template = 'views/page/catalogue.phtml';
         include_once 'views/main.phtml';
     }
+
+
 }

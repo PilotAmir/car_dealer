@@ -65,13 +65,13 @@ class inscription implements base
         if (isset($_GET['id'])) {
             // J'appelle DeleteUser() depuis le model, qui me permet de supprimer un utilisateur en fonction de son client_id 
             $this->model->Delete(intval($_GET['id']));
-            echo'supp';
-            // header("location: index.php");
-            // exit();
+            
+            header("location: index.php?goto=admin&target=consulter");
+            exit();
         } else {
-            // header("location: index.php");
-            // exit();
-            echo'impossible';
+            header("location: index.php?goto=admin&target=consulter");
+            exit();
+            
         }
     }
 

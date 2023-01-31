@@ -1,37 +1,33 @@
 <div class="tac">
     <h2>A propos de nous</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, nemo debitis maiores ab magnam consequuntur nostrum mollitia ad suscipit incidunt explicabo, est excepturi accusamus voluptatem deleniti animi dolorem enim consequatur.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque soluta enim iusto doloremque nemo consequuntur, ea praesentium tempore ex quo sunt sapiente ipsam error animi odio? Labore, et architecto. Nobis.</p>
-    <video controls poster="./assets/img/latest-news-bg.png">
-        <source src = "./assets/medias/cooking.mp4" type="video/mp4">
-    </video>
+    <p>Envie de voiture de Luxe a moindre cout, nous vous offrons la possiblité d'en avoir chez nous le plus vite possible et surtout a un cout qui défie toute concurrence</p>
 
-    <h2>Nos Voitures de reves</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus suscipit fugit repellendus officia, odio iure? Itaque vel quo neque dolorem quidem beatae modi obcaecati eum sapiente saepe. Deserunt, sapiente laboriosam.</p>
+    <p>N'attend pas de te faire prier et inscris toi pour réserver ta voiture de reve chez nous</p>
+   
+
+    <div class="about">
+            
+            <?php if (isset($article)) : ?>
+                
+                
+                <?php foreach ($article as $key => $values) : ?>
+                    
+                    <div class = "about_up">
+
+                        <h2><?=$values["titre"]?></h2>
+                        
+                        <img src="<?=$values["image_article"]?>" alt ="image_article">
+                        
+                    </div>
+                    <div class="commentaire"><p ><?=$values["commentaire"]?> </p> 
+                    </div>
+
+                   
+                <?php endforeach ?> 
+            <?php endif ?>
+
+    </div>
 
 </div> 
 
-<div class = "galery tac">
-    <figure>
-        <img src="./assets/img/bmw_x6.png" alt="bmw_x6">
-        <figcaption>bmw_x6</figcaption>
-    </figure>
 
-    <figure>
-        <img src="./assets/img/feature-car4.png" alt="feature-car4">
-        <figcaption>feature-car4</figcaption>
-    </figure>
-
-    <figure>
-        <img src="./assets/img/feature-car5.png" alt="feature-car5">
-        <figcaption>feature-car5</figcaption>
-    </figure>
-
-    <figure>
-        <img src="./assets/img/feature-car2.png" alt="feature-car2">
-        <figcaption>feature-car2</figcaption>
-    </figure>
-
-
-
-</div>

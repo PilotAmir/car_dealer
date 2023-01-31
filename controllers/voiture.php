@@ -44,7 +44,8 @@ class voiture
                             move_uploaded_file($fileTmp, "$uploadDir/$newName");
                             $dir = "$uploadDir/$newName";
                             $this->model->Insert([$_POST['voiture_brand'],$_POST['voiture_model'], $_POST['voiture_color'] , $_POST['voiture_price'], $dir]);
-                            echo "ok";
+                            header("location: index.php?goto=voiture");
+                            exit(); 
                           } else {
                             echo "Fichier trop volumineux";
                           }

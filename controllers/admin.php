@@ -4,14 +4,14 @@ namespace controllers;
 class admin
 {
     private $model;
-    private $NavModel;
+    private $navmodel;
     private $article;
     private $user;
     // use \controllers\utils;
     public function __construct()
    {
     // $_SESSION['links']=$this->GetLinks();
-    // $this->Navmodel=New \models\nav_links();
+    $this->navmodel=New \models\nav_links();
     $this->model= new \models\reservation();
     $this->article= new \models\article();
     $this->user= new \models\users();
@@ -38,7 +38,7 @@ class admin
         if(isset($_POST['links_name']) && isset($_POST['nav_goto']) && isset($_POST['nav_target']))
         {
             //j'appelle la fonction Insert() depuis le model afin d'ajouter les liens en base
-            $this->Navmodel->Insert([$_POST['LinksName'],$_POST['navGoto'],$_POST['navTarget'],$_POST['UserRole']]);
+            $this->navmodel->Insert([$_POST['links_name'],$_POST['nav_goto'],$_POST['nav_target']]);
             echo "envoyé";
             header("location:index.php?goto=admin");
 
@@ -48,7 +48,7 @@ class admin
             echo 'saisi les liens';
         }
     }
-
+    $links = $this->navmodel->GetAll();
     $template = 'views/page/adddashlink.phtml';
     include_once 'views/mainadmin.phtml';
    }
@@ -183,5 +183,8 @@ class admin
         $template = 'views/page/liste_client.phtml';
         include_once 'views/mainadmin.phtml';
     }
+
+   
+    
 
 }

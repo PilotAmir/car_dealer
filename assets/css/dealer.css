@@ -2,39 +2,15 @@
 /* *****************************************************************
 GENERAL
 ***************************************************************** */
-
-/* html, body, div, span, applet, object, iframe,
-h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li, 
- fieldset, form, label, legend, 
- table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-} */
-
-
 *,
 *::before,
-*::after{
+*::after,
+h1,
+div{
     box-sizing: border-box;
     margin:0;
     padding: 0;
 }
-
-
-
 
 :root{
     --white:#ffffff;
@@ -44,11 +20,10 @@ time, mark, audio, video {
     --beige:#ebe3db;
     --red:#950000;
 }
+
 .container {
 	box-sizing: border-box;
-    
     margin: 0 auto;
-
 }
 
 header{
@@ -65,7 +40,7 @@ header{
     color:var(--noir);
 }
 
-.up h1 span{
+span{
     color:#c5c544;
 }
 
@@ -100,16 +75,64 @@ li{
     background-color: var(--yel);
 }
 table{
-    margin: 10px auto;
+    margin: 3em auto;
+    border-collapse: collapse;
 }
 td,th{
-    border: 1px solid black;
+    border: 3px solid var(--vert);
+    
     text-align: left;
-    padding: 14px;
+    padding: 2rem;
 }
-/* body{
-    background-color: #4c4343;
-} */
+
+th{
+    background-color: var(--beige);
+    font-size: 1.2em; 
+    
+    
+}
+
+td{
+    font-size: 1.1em;
+    background-color: #f8f8e8;
+    font-weight: bold;
+}
+
+.sign_in{
+    color:var(--noir);
+
+}
+
+.sign_in svg {
+    color:black;
+    transition: all .7s linear;
+}
+
+.sign_in svg:hover{
+    color:var(--yel);
+    transform:scale(1.1);
+    transition: transform 1s,background-color 1s,color 1s;
+}
+
+.sign_in svg{
+    width:2rem;
+}
+
+.ea{
+    background-image: url(../img/Audi-white-car-front-view-headlight_3840x2160.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.ea h2{
+   color:var(--white); 
+}
+
+.main-form .radio{
+    font-weight: bold;
+    color:var(--white);
+}
 
 /* *****************************************************************
 NAV
@@ -151,25 +174,7 @@ nav ul li a.active{
     background-color: #192519;
 }
 
-.sign_in{
-    color:var(--beige);
 
-}
-
-.sign_in svg {
-    color:black;
-    transition: all .7s linear;
-}
-
-.sign_in svg:hover{
-    color:var(--yel);
-    transform:scale(1.1);
-    transition: transform 1s,background-color 1s,color 1s;
-}
-
-.sign_in svg{
-    width:2rem;
-}
 
 /* *****************************************************************
 MAIN
@@ -245,7 +250,14 @@ main svg:hover{
     transition: transform 1s,background-color 1s,color 1s;
 }
 
+article{
+    width: 70%;
+    margin:0 auto;
+}
 
+article p{
+    text-align: justify;
+}
 
 /* *****************************************************************
 FOOTER
@@ -302,6 +314,11 @@ ABOUT
     
 }
 
+.about_up img{
+    width:33rem;
+    height:20rem;
+}
+
 .commentaire{
     line-height: 1.4;
     text-align: justify;
@@ -318,12 +335,111 @@ VERSION TABLETTE
         justify-content: space-between;
     }
 
+    section{
+        display:flex;
+    }
+
+   
 
 }
 
 
 @media screen and (min-width:1100px){
 
+    section{
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 2rem;
+    }
+
+    article div p {
+        flex-wrap: nowrap;
+        height:10rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+    }
+
+    article{
+        flex-basis: 40%;
+    }
+
+    .about{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        
+    }
+
+    .about h2{
+        flex-basis: 100%;  
+    }
+
+    .about .about_up{
+        flex-basis: 65%;
+        width:50%;
+        margin: 1rem;
+        padding: 0;
+    }
+
+
+    .commentaire{
+        flex-basis: 30%;
+        padding: 2rem;
+        margin: 1rem;
+    }
+
+}
+
+@media screen and (min-width:1800px){
+
+    section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 2rem;
+
+    }
+
+    article div p {
+        flex-wrap: nowrap;
+        height:10rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+    }
+
+    article{
+        flex-basis: 30%;
+    }
+    
+    .about{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        
+    }
+
+    .about h2{
+        flex-basis: 100%;  
+    }
+
+    .about .about_up{
+        flex-basis: 65%;
+        width:50%;
+        margin: 1rem;
+        padding: 0;
+    }
+
+
+    .commentaire{
+        flex-basis: 30%;
+        padding: 2rem;
+        margin: 1rem;
+    }
+
 }
 
 
@@ -333,19 +449,6 @@ VERSION TABLETTE
 
 
 
-
-/* input[type="text"] {
-	width: 50%;
-	margin: 3rem auto 0 auto;
-	border: none;
-	background-color: #4c4343;
-	color: white;
-	text-transform: uppercase;
-	font-weight: bold;
-	font-size: 1.6rem;
-	letter-spacing: .3rem;
-	padding: 1rem 3rem;
-} */
 
 
 
@@ -409,9 +512,22 @@ PAGE NOS VOITURES
     background-image: url(../img/brand-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
-    padding-block: 10em;
-    /* text-align: center; */
+    padding-block: 20em;
+    text-align: center;
     color:var(--white);
+    /* height: 30rem; */
+}
+
+.bane::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: var(--noir);
+    opacity: .5;
 }
 
 .daily{
@@ -481,29 +597,6 @@ PAGE NOS VOITURES
 
 
 
-/* *****************************************************************
-INSCRIPTION
-***************************************************************** */
-
-
-.main-form{
-    margin: 0 auto;
-    max-width: 80%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -540,15 +633,62 @@ FORMULAIRE
 ***************************************************************** */
 
 .main-form{
-
-    padding: 2rem;
-    margin:1rem;
+    width: 60%;
+    padding: 0 10rem;
+    margin:0 auto;
+    border: 1px solid black;
+    border-radius: 10rem;
+    text-align: center;
+    background: rgba(0,0,0,0);
 }
 
 .main-form div{
     margin:1rem;
 }
 
-.main-form input{
-    width: 15%;
+.main-form h2{
+    text-transform: uppercase;
+    margin:1rem;
+    padding: 1rem;
 }
+
+.main-form input {
+	width: 50%;
+	margin: 1rem auto 0 auto;
+	border: none;
+	background-color:var(--beige);
+	color: var(--vert);
+	font-weight: bold;
+	font-size: 1.6rem;
+	letter-spacing: .3rem;
+	padding: 1rem 2rem;
+}
+
+.main-form button{
+    margin: 1rem;
+    width: 100%;
+    border:1px solid var(--noir);
+    border-radius: 1rem;
+	background-color:var(--vert);
+	color: var(--white);
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.6rem;
+	letter-spacing: .3rem;
+	padding: 1rem 2rem;
+    transition: all .7s linear;
+
+}
+
+.main-form button:hover{
+    cursor:pointer;
+    background-color: var(--yel);
+    color:var(--black);
+}
+
+textarea{
+    font-size: 1.6rem;
+	letter-spacing: .3rem;
+    background-color: var(--beige);
+}
+

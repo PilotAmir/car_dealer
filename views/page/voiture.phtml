@@ -1,37 +1,37 @@
 <div class="main-form"> 
   <form action="" method="post" enctype="multipart/form-data">
 
-        <div>
+        <div class="radio">
             
             <input type="radio" name="voiture_brand" id="voiture_brand" value="bmw">
 
-            <label for="voiture_brand">BMW</label><br>
+            <label for="voiture_brand">B M W</label><br>
 
             <input type="radio" name="voiture_brand" id="voiture_brand" value="audi">
 
-            <label for="voiture_brand">AUDI</label><br>
+            <label for="voiture_brand"> AUDII </label><br>
 
             <input type="radio" name="voiture_brand" id="voiture_brand" value="mercedes">
 
-            <label for="voiture_brand">MERCEDES</label><br>
+            <label for="voiture_brand">MERCO</label><br>
 
             <input type="radio" name="voiture_brand" id="voiture_brand" value="lamborghini">
 
-            <label for="voiture_brand">LAMBORGHINI</label><br>
+            <label for="voiture_brand">LAMBO</label><br>
 
         </div>
 
         <div>
-            <label for="voiture_model">Voiture model</label>
+            
             <input type="text" name="voiture_model" id="voiture_model" placeholder = "voituremodel" value='<?=(isset($b)) ? $b['voiture_model'] : '' ?>' >
         </div>
         <div>
-            <label for="voiture_color">Voiture color</label>
-            <input type="text" name="voiture_color" id="voiture_color" value='<?=(isset($b)) ? $b['voiture_color'] : '' ?>' >
+           
+            <input type="text" name="voiture_color" id="voiture_color" value='<?=(isset($b)) ? $b['voiture_color'] : '' ?>' placeholder = "Color" >
         </div>
         <div>
-            <label for="voiture_price">Voiture price</label>
-            <input type="text" name="voiture_price" id="voiture_price" value='<?=(isset($b)) ? $b['voiture_price'] : '' ?>' >
+            
+            <input type="text" name="voiture_price" id="voiture_price" value='<?=(isset($b)) ? $b['voiture_price'] : '' ?>' placeholder = "price" >
         </div>
         <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
             <div >

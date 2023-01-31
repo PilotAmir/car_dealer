@@ -27,13 +27,21 @@ class reservation
             echo"voila la session";
             var_dump($_SESSION['user_id']);
             $this->reserve->Insert([$_SESSION['user_id'], $_POST['id_de_voiture'], $_POST['pack_reserver']]);
-        }else{
-            echo'pb kekepart';
+            header("location: index.php?goto=reservation");
+            exit(); 
         }
 
 
         $template = 'views/page/espaceclient.phtml';
         include_once 'views/main.phtml';
+    }
+
+    public function liste_reservation()
+    {
+        $liste_reservation=$this->reserve->GetReservation();
+        $num=1;
+        $template = 'views/page/liste_reservation.phtml';
+        include_once 'views/mainadmin.phtml';
     }
 
 }
