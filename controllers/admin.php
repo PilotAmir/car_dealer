@@ -22,8 +22,6 @@ class admin
         $this->dash();
     }
 
-
-
    } 
 
    public function dash()
@@ -32,7 +30,7 @@ class admin
     include_once 'views/mainadmin.phtml';
    }
 
-   public function store()
+   public function store() 
    {
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST['links_name']) && isset($_POST['nav_goto']) && isset($_POST['nav_target']))

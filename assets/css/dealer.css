@@ -490,7 +490,21 @@ VERSION TABLETTE
         height: 5rem;
     }
 
+    .video{
+        display: flex;
+        justify-content: space-between;
+        background-color: #3a3838;
+        padding: 2rem;
+    }
    
+    .video h1{
+        margin-top: 8rem;
+        font-weight: bold;
+        font-size: x-large;
+        color:var(--white);
+    }
+
+
 }
 
 
